@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOCÊ VENCEU!!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div>
+            <img src="./imagens/game.png"> 
+        </div>
+        <div>
+            <select name="seletor" id="seletor">
+                <option value = "vazio">--Selecione o nivel--</option>
+                <option value="nivel1">Fácil</option>
+                <option value="nivel2">Médio</option>
+                <option value="nivel3">Dificil</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" class="btn" onclick="iniciaJogo()" >Iniciar jogo</button>
+        </div>
+        
+    </div>
+    <script>
+        function iniciaJogo(){
+            var nivel = document.getElementById('seletor').value;
+            if (nivel ==='vazio') {
+                alert("Selecione um nivel");
+                return false;
+            }
+            window.location.href = 'app.html?' + nivel;
+        }
+        
+    </script>
+</body>
+</html>
